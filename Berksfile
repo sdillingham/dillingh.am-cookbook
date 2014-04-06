@@ -22,7 +22,7 @@ site :opscode
 # the community site. The ~> is called a pessimistic version
 # constraint. It will pick up any additional patch (bug) releases, but
 # will keep the minor version locked at 101. In other words, 0.101.X.
-# cookbook "nginx", "~> 0.101.5"
+# cookbook "nginx", "~> 2.5.0"
 
 # Berkshelf also allows you to define git locations. Uncomment the following line
 # to download the latest master branch from github for this cookbook.
@@ -32,3 +32,5 @@ site :opscode
 # Uncomment to point at a local cookbook on the filesystem, relative to the
 # current working directory.
 # cookbook "myserver", :path => "/code/myserver-cookbook"
+
+cookbook 'nginx-app', '~> 0.1.0', path: 'cookbooks/nginx-app'

@@ -1,0 +1,25 @@
+server {
+  listen   80;
+  server_name  dillingh.am;
+ 
+  access_log  <%= node['nginx']['log_dir'] %>/dillingham-access.log;
+  error_log   <%= node['nginx']['log_dir'] %>/dillingham-error.log;
+ 
+  location / {
+    root   /var/www/dillingham;
+    index  index.html index.htm;
+  }
+}
+
+server {
+  listen   80;
+  server_name  sean.dillingh.am;
+ 
+  access_log  <%= node['nginx']['log_dir'] %>/sean-access.log;
+  error_log   <%= node['nginx']['log_dir'] %>/sean-error.log;
+ 
+  location / {
+    root   /var/www/seandillingham;
+    index  index.html index.htm;
+  }
+}

@@ -14,12 +14,19 @@ server {
 server {
   listen   80;
   server_name  sean.dillingh.am;
- 
+
+  charset UTF-8;
+
   access_log  <%= node['nginx']['log_dir'] %>/sean-access.log;
   error_log   <%= node['nginx']['log_dir'] %>/sean-error.log;
  
   location / {
     root   /var/www/seandillingham;
     index  index.html index.htm;
+  }
+
+  location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
+    expires 1y;
+    log_not_found off;
   }
 }

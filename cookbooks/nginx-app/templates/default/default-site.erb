@@ -26,3 +26,19 @@ server {
   }
 
 }
+
+server {
+  listen   80;
+  server_name  exely.dillingh.am;
+
+  charset UTF-8;
+
+  access_log  <%= node['nginx']['log_dir'] %>/exely-access.log;
+  error_log   <%= node['nginx']['log_dir'] %>/exely-error.log;
+ 
+  location / {
+    root   /var/www/exelydillingham;
+    index  index.html index.htm;
+  }
+
+}
